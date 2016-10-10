@@ -1,0 +1,39 @@
+<!--
+
+en
+
+ A basic angular application can be written like this
+ The very important thing is to reference the angular.min.js file
+ which is the angular framework implementation
+
+ fr
+
+ Une application basique d'angular peut etre ecrit de cette facon
+ La plus importante des choses est d'inclure angular.min.js qui est
+ l'implementation du framework
+-->
+<!doctype html>
+
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+      <title>Example Basique</title>
+      <script src="vendor/angular.min.js"></script>
+  </head>
+
+  <body >
+    <div ng-app ng-init="L=4;l=5">
+      <b>Surface Rectagle:</b>
+      <div>
+        Longueur: <input type="number" min="0" ng-model="L">
+      </div>
+      <div>
+        Largeur: <input type="number" min="0" ng-model="l">
+      </div>
+      <div>
+        <b>Air du rectangle:</b> {{L * l}}
+      </div>
+    </div>
+  </body>
+</html>

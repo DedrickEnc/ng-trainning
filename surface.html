@@ -1,0 +1,52 @@
+<!--
+
+en
+
+There is an additional file referenced, witch is our controller
+It is important to load the angular frame work implementation first
+The controller handle the views and the model which are every data
+tailed to the controller scope (this). The controller is mainly there
+to expose variable and function to directives and expressions
+
+ fr
+
+Il y a un fichier additionnel reference, c'est le controller.
+Il est toujours important de charger d'abord le fichier contenant
+l'implementation de angular. Le controller gere la vue et le model
+qui est constitue de donnees (variables ou fonctions) attache
+au scope du controller (this). Principalement le controller sert
+a expose les variables et fonctions aux directives et expressions
+-->
+<!doctype html>
+
+<html lang="fr">
+
+  <head>
+    <script src="vendor/angular.min.js"></script>
+    <script src="surfaceController.js"></script>
+    <meta charset="UTF-8">
+    <title>Example Surface avec Controller</title>
+  </head>
+
+  <body>
+    <div ng-app="surface" ng-controller="SurfaceController as surface">
+    <b>Surface :</b>
+    <div>
+      Longueur: <input type="number" min="0" ng-model="surface.L" required >
+    </div>
+    <div>
+      Largueur: <input type="number" min="0" ng-model="surface.l" required >
+      <select ng-model="surface.unit">
+        <option ng-repeat="u in surface.unites">{{u}}</option>
+      </select>
+    </div>
+    <div>
+      <b>Surface:</b>
+    <span ng-repeat="u in surface.unites">
+      {{surface.surface(u) | currency:u}}
+    </span>
+      <button class="btn" ng-click="surface.calculate()">Calculate</button>
+    </div>
+  </div>
+  </body>
+</html>

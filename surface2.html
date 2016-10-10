@@ -1,0 +1,46 @@
+<!--
+
+en
+
+We add a service, to isolate every function with is not linked to the view
+in order to make reusable
+
+ fr
+
+Nous avons ajoute un service enfin d'isoler les fonctions
+independante de la vue, enfin qu'elles soient reutilisable
+-->
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+  <script src="vendor/angular.min.js"></script>
+  <script src="math.js"></script>
+  <script src="surfaceController.js"></script>
+  <meta charset="UTF-8">
+  <title>Example Surface avec Controller et Service</title>
+</head>
+
+<body>
+<div ng-app="surface" ng-controller="SurfaceController as surface">
+  <b>Surface :</b>
+  <div>
+    Longueur: <input type="number" min="0" ng-model="surface.L" required >
+  </div>
+  <div>
+    Largueur: <input type="number" min="0" ng-model="surface.l" required >
+    <select ng-model="surface.unit">
+      <option ng-repeat="u in surface.unites">{{u}}</option>
+    </select>
+  </div>
+  <div>
+    <b>Surface:</b>
+    <span ng-repeat="u in surface.unites">
+      {{surface.surface(u) | currency:u}}
+    </span>
+    <button class="btn" ng-click="surface.calculate()">Calculate</button>
+  </div>
+</div>
+</body>
+</html>
