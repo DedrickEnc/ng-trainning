@@ -6,11 +6,17 @@ en
  The very important thing is to reference the angular.min.js file
  which is the angular framework implementation
 
+ The HTML element containing the ng-app directive, is which will support
+ the angular functionality
+
  fr
 
  Une application basique d'angular peut etre ecrit de cette facon
  La plus importante des choses est d'inclure angular.min.js qui est
  l'implementation du framework
+
+ L'element HTML contenant la directive n-app est celui dans lequel
+ les fonctionnalites angular seront supportees.
 -->
 <!doctype html>
 
@@ -23,15 +29,19 @@ en
   </head>
 
   <body >
+    <!-- ng-init for variable initialization -->
     <div ng-app ng-init="L=4;l=5">
       <b>Surface Rectagle:</b>
       <div>
+        <!-- ng-model put automatically a variable to the scope,
+        Longuer value will be stored to the scope variable L -->
         Longueur: <input type="number" min="0" ng-model="L">
       </div>
       <div>
         Largeur: <input type="number" min="0" ng-model="l">
       </div>
       <div>
+        <!-- braces informs angular to replace it by the evaluated expression -->
         <b>Air du rectangle:</b> {{L * l}}
       </div>
     </div>
