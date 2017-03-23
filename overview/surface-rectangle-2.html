@@ -22,13 +22,18 @@ a expose les variables et fonctions aux directives et expressions
 <html lang="fr">
 
   <head>
-    <script src="vendor/angular.min.js"></script>
-    <script src="surfaceController.js"></script>
+    <script src="../vendor/angular.min.js"></script>
+    <script src="surfaceRectangle2Controller.js"></script>
     <meta charset="UTF-8">
     <title>Example Surface avec Controller</title>
   </head>
 
   <body>
+    <!-- This div block, will support angular functionality,
+     for this example, angular will init the surface module created
+     in our surfaceRectangle2Controller.js which contains a controller
+     called SurfaceController, This view portion will be controlled by
+     the SurfaceController-->
     <div ng-app="surface" ng-controller="SurfaceController as surface">
     <b>Surface :</b>
     <div>
