@@ -1,0 +1,19 @@
+<!-- We just need to reference mainModule see the ng-app -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="../vendor/angular.min.js"></script>
+  <script src="firstService.js"></script>
+  <script src="firstServiceController.js"></script>
+  <script src="mainModule.js"></script>
+  <title>Title</title>
+</head>
+<body ng-app="mainModule">
+  <div id="simple" ng-controller="MyController">
+    <input ng-init="tkn='Hello'" ng-model="tkn" >
+    <button ng-click="putToken(tkn);">PUT</button>
+    <p>(you have to click 3 times to see an alert)</p>
+  </div>
+</body>
+</html>
