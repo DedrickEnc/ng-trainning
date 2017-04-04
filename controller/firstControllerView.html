@@ -1,0 +1,41 @@
+<!--
+
+This is the view implementation, which in combination of template and data
+
+An angular app must have a main module, myApp in this case
+which will be run through ng-app directive, in our case, myApp contains
+our controller, so before referencing a controller we must reference
+his module.
+
+ Here is the order of importation and referencing :
+
+  Importation
+
+ 1. AngularJS (<script src="../vendor/angular.min.js"></script>)
+ 2. Controller (<script src="firstController.js"></script>)
+
+ Referencing
+
+ 1. module (ng-app="myApp")
+ 2. Controller (ng-controller="GreetingController")
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="../vendor/angular.min.js"></script>
+  <script src="firstController.js"></script>
+  <title>First controller view</title>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="GreetingController">
+  {{ greeting }}
+
+  Two times <input ng-model="num"> equals {{ double(num) }}
+</div>
+
+</body>
+</html>
